@@ -47,3 +47,9 @@ result2 : bool = solution2.isPalindrome2(test_case)
 print(result2)
 
 
+#####
+# 3 # deque 자료형 사용
+#####
+
+
+
