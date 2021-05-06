@@ -11,7 +11,7 @@
 # false
 
 #####
-# 1 #
+# 1 # 리스트로 변환
 #####
 a = "A man, a plan, a canal: Panama"
 class Solution:
@@ -32,5 +32,18 @@ result : bool = solution.isPalidrome(test_case)
 print(result)
 
 #####
-# 2 #
+# 2 # 슬라이싱 사용
 #####
+
+import re
+class Solution2:
+    def isPalindrome2(self, s:str) -> bool:
+        s = s.lower()
+        s = re.sub('[^a-z0-9]','',s) # 숫자 or 문자 아닌것 공백처리
+        return s == s[::-1] 
+
+solution2 = Solution2()
+result2 : bool = solution2.isPalindrome2(test_case)
+print(result2)
+
+
