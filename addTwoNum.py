@@ -41,5 +41,27 @@ print(twosum2(nums,target))
 # 3. 첫번째 수 뺀 key 조회
 ########################
 
+nums = [11, 2, 15, 7]
+target = 9
+
 def twosum3(nums,target):
-    pass
+    nums_map = {}
+    # key value 바꿔서 dict에 저장
+    for i, num in enumerate(nums):
+        nums_map[num] = i
+        
+    for i, num in enumerate(nums):
+        if target - num in nums_map and i != nums_map[target-num]:
+            return nums.index(num), nums_map[target - num]
+
+
+##################
+# 4. 조회 구조 개선
+##################
+
+def twosum4(nums,target):
+    nums_map = {}
+    for i, num in enumerate(nums):
+        if target - num in nums_map:
+            return [nums_map[target-num],i]
+        nums_map[num] = i
